@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Order</title>
+</head>
+<body>
+  <h1>Restaurant Order</h1>
+  
+  <label for="nasi-goreng">Nasi Goreng:</label>
+  <input type="text" id="nasi-goreng" min="0" value=" "><br>
+  
+  <label for="mie-goreng">Mie Goreng:</label>
+  <input type="text" id="mie-goreng" min="0" value=" "><br>
+  
+  <label for="ayam-goreng">Ayam Goreng:</label>
+  <input type="text" id="ayam-goreng" min="0" value=" "><br>
+  
+  <button onclick="calculateTotal()">Total</button>
+  
+  <div id="result"></div>
+  
+  <script>
+    function calculateTotal() {
+      var nasiGoreng = Number(document.getElementById("nasi-goreng").value);
+      var mieGoreng = Number(document.getElementById("mie-goreng").value);
+      var ayamGoreng = Number(document.getElementById("ayam-goreng").value);
+      
+      var totalBeforeDiscount = (nasiGoreng * 25000) + (mieGoreng * 20000) + (ayamGoreng * 30000);
+      
+      var discount = 0;
+      if (totalBeforeDiscount > 1500000) {
+        discount = 0.15 * totalBeforeDiscount;
+      } else if (totalBeforeDiscount > 100000) {
+        discount = 0.1 * totalBeforeDiscount;
+      }
+      
+      var totalAfterDiscount = totalBeforeDiscount - discount;
+      
+      document.getElementById("result").innerHTML = "Total sebelum diskon: Rp " + totalBeforeDiscount.toLocaleString() + "<br>" +
+                                                  "Diskon: Rp " + discount.toLocaleString() + "<br>" +
+                                                  "Total setelah diskon: Rp " + totalAfterDiscount.toLocaleString();
+    }
+  </script>
+</body>
+</html>

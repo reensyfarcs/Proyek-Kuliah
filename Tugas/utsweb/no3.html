@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resto Satu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+            margin: 20px auto;
+            width: 100%;
+            border: 2px solid #fce0a9;
+            background-color: #ffffff;
+        }
+        .header, .footer {
+            grid-column: span 3;
+            background-color: #f9b66e;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .header {
+            font-size: 1.5em;
+        }
+        .footer {
+            font-size: 0.9em;
+        }
+        .menu {
+            padding: 20px;
+            background-color: #f5d290;
+        }
+        .menu h3 {
+            text-decoration: underline;
+        }
+        .menu ul, .menu ol {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1em;
+            text-align: left;
+        }
+        .menu ul li, .menu ol li {
+            margin: 8px 0;
+        }
+        .menu ul li a, .menu ol li a {
+            color: #b92ddc;
+            text-decoration: none;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f5d290;
+        }
+        .content img {
+            width: 200px;
+            height: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">MENU RESTO SATU</div>
+        
+        <!-- Menu Makanan -->
+        <div class="menu">
+            <h3>MAKANAN</h3>
+            <ul>
+                <li><a href="#" onclick="showImage('bakso.jpg', 'Menu Bakso')">BAKSO</a></li>
+                <li><a href="#" onclick="showImage('sate.jpg', 'Menu Sate')">SATE</a></li>
+                <li><a href="#" onclick="showImage('ayam-bakar.jpg', 'Menu Ayam Bakar')">AYAM BAKAR</a></li>
+            </ul>
+        </div>
+        
+        <!-- Content Image dan Audio -->
+        <div class="content">
+            <h3 id="menu-title">MENU SATE</h3>
+            <img id="menu-image" src="bakso.jpg" alt="Menu Bakso">
+            <audio controls>
+                <source src="LaD-ost.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <!-- Menu Minuman -->
+        <div class="menu">
+            <h3>MINUMAN</h3>
+            <ol type="A">
+                <li><a href="#" onclick="showImage('teh-manis.jpg', 'Teh Manis')">TEH MANIS</a></li>
+                <li><a href="#" onclick="showImage('jus-buah.jpg', 'Jus Buah')">JUS BUAH</a></li>
+                <li><a href="#" onclick="showImage('es-campur.jpg', 'Es Campur')">ES CAMPUR</a></li>
+                <li><a href="#" onclick="showImage('air-mineral.jpg', 'Air Mineral')">AIR MINERAL</a></li>
+            </ol>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">Created by @202243502669 & Nanda Syifa Fadhillah</div>
+    </div>
+
+    <script>
+        function showImage(image, title) {
+            document.getElementById('menu-image').src = image;
+            document.getElementById('menu-title').innerText = title;
+        }
+    </script>
+
+</body>
+</html>
